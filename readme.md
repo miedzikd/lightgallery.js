@@ -6,6 +6,10 @@
 
 Full featured JavaScript lightbox gallery. No dependencies.
 
+## @miedzikd fork:
+
+I forked this repository for people who want use lightgallery only in fullscreen mode, and don't have problem `Request for fullscreen was denied because Element.requestFullscreen() was not called from inside a short running user-generated event handler.` This problem exists e.g. in Firefox. Can be resoved by run fullscreen directrly from initialization, not from event listeners.
+
 ![lightgallery](https://raw.githubusercontent.com/sachinchoolur/lightgallery.js/gh-pages/lightgallery.png)
 
 ## Demo
@@ -43,25 +47,13 @@ lightgallery supports all major browsers including IE 9 and above.
 
 ## Installation
 
-### Install with Bower
-
-You can install `lightgallery` using the [Bower](http://bower.io) package manager.
-
-```sh
-bower install lightgallery.js --save
-```
-
 ### npm
 
 You can also find `lightgallery` on [npm](https://www.npmjs.com/).
 
 ```sh
-npm install lightgallery.js
+npm install https://github.com/miedzikd/lightgallery.js
 ```
-
-### CDN
-
-http://www.jsdelivr.com/projects/lightgallery.js
 
 ### Download from GitHub
 
@@ -88,7 +80,6 @@ If you want to include any lightgallery plugin you can include it after `lightga
 
     <!-- lightgallery plugins -->
     <script src="js/lg-thumbnail.min.js"></script>
-    <script src="js/lg-fullscreen.min.js"></script>
 </body>
 ```
 
