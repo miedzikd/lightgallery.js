@@ -161,7 +161,6 @@ function Plugin(element, options) {
 }
 
 Plugin.prototype.requestFullscreen = function() {
-    console.log("requestFullscreen ");
     var el = document.documentElement;
     if (el.requestFullscreen) {
         el.requestFullscreen();
