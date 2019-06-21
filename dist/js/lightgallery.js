@@ -1519,6 +1519,8 @@ Plugin.prototype.init = function() {
     Plugin.prototype.destroy = function (d) {
 
         var _this = this;
+        
+        _this.exitFullscreen();  
 
         if (!d) {
             _lgUtils2.default.trigger(_this.el, 'onBeforeClose');
