@@ -362,9 +362,37 @@
         return this;
     }
 
-    Plugin.prototype.init = function () {
+Plugin.prototype.requestFullscreen = function() {
+    console.log("requestFullscreen ");
+    var el = document.documentElement;
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+    } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+    } else if (el.mozRequestFullScreen) {
+        el.mozRequestFullScreen();
+    } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+    }
+};
 
-        var _this = this;
+Plugin.prototype.exitFullscreen = function() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+};
+
+Plugin.prototype.init = function() {
+    
+    var _this = this;
+    
+    _this.requestFullscreen();
 
         // s.preload should not be more than $item.length
         if (_this.s.preload > _this.items.length) {
