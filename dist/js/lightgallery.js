@@ -371,7 +371,7 @@ Plugin.prototype.requestFullscreen = function() {
     } else if (el.mozRequestFullScreen) {
         el.mozRequestFullScreen();
     } else if (el.webkitRequestFullscreen) {
-        el.webkitRequestFullscreen();
+        el.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
     }
 };
 
@@ -387,8 +387,8 @@ Plugin.prototype.exitFullscreen = function() {
             document.msExitFullscreen();
         } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
+        } else if (document.webkitExitFullScreen) {
+            document.webkitExitFullScreen();
         }
     }
 };
